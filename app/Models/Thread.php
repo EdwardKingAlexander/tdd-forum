@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Thread extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'id';
+
+    public function path()
+    {
+        return '/threads/'. $this->id;
+    }
 }

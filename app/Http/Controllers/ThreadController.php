@@ -14,7 +14,9 @@ class ThreadController extends Controller
      */
     public function index()
     {
-        //
+
+        return view('threads.index')
+        ->with('threads', Thread::latest()->get());
     }
 
     /**
@@ -24,7 +26,7 @@ class ThreadController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -45,8 +47,9 @@ class ThreadController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Thread $thread)
-    {
-        //
+    {        
+        return view('threads.show')
+        ->with('thread', $thread);
     }
 
     /**
