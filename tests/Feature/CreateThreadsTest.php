@@ -24,8 +24,7 @@ class CreateThreadsTest extends TestCase
     {
         $this->withoutExceptionHandling();
         $this->expectException(AuthenticationException::class);
-        $thread = Thread::factory()->create();
-
+        $thread = create(Thread::class);
         $this->post('/threads', $thread->toArray());
     }
 
@@ -37,9 +36,9 @@ class CreateThreadsTest extends TestCase
     public function test_an_authenticated_user_can_create_new_forum_thread()
     {
 
-        $this->actingAs(User::factory()->create());
+        $this->signIn();
 
-        $thread = Thread::factory()->make();
+        $thread = make(Thread::class);
 
         $response = $this->post('/threads', $thread->toArray());
 
