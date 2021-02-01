@@ -25,19 +25,13 @@
           <div class="ml-3">
             <p class="text-sm font-medium text-gray-900">
               <a href="#">
-                Paul York
+                {{ $thread->creator->name }}
               </a>
             </p>
             <div class="flex space-x-1 text-sm text-gray-500">
               <time datetime="2020-03-16">
-                Mar 16, 2020
+                Posted: {{ $thread->created_at->diffForHumans() }}
               </time>
-              <span aria-hidden="true">
-                &middot;
-              </span>
-              <span>
-                6 min read
-              </span>
             </div>
           </div>
         </div>
