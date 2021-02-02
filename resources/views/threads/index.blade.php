@@ -26,13 +26,6 @@
      
          @foreach($threads as $thread)
          <div>
-            <div>
-              <a href="#" class="inline-block">
-                <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">
-                  Article
-                </span>
-              </a>
-            </div>
             <a href="{{ $thread->path() }}" class="block mt-4">
               <p class="text-xl font-semibold text-gray-900">
                 {{ $thread->title }}
