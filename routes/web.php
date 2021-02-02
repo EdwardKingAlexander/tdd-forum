@@ -15,5 +15,4 @@ Route::get('/dashboard', function () {
 
 Route::resource('threads', ThreadController::class);
 Route::post('/threads/{thread}/replies', [ReplyController::class, 'store']);
-
 require __DIR__.'/auth.php';
